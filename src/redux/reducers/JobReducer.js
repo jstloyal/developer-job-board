@@ -1,38 +1,36 @@
 const InitialState = {
   loading: false,
-  data: [],
-  errorMsg: ''
-}
+  data: {},
+  errorMsg: '',
+};
 
-const JobListReducer = (state = InitialState, action) => {
+const JobReducer = (state = InitialState, action) => {
   switch (action.type) {
-    case JOB_LIST_LOADING:
+    case JOB_LOADING:
       return {
         ...state,
         loading: true,
-        data: [],
         errorMsg: '',
       };
-
-    case JOB_LIST_FAIL:
+    case JOB_FAIL:
       return {
         ...state,
         loading: false,
-        data: [],
-        errorMsg: 'Unable to get jobs',
+        errorMsg: 'Unable to find job',
       };
-
-    case JOB_LIST_SUCCESS:
+    case JOB_SUCCESS:
       return {
         ...state,
         loading: false,
-        data: action.payload,
-        count: action.payload.length,
         errorMsg: '',
+        data: {
+          ...state.data,
+          [action.jobId]: action.payload,
+        },
       };
     default:
       return state;
   }
 };
 
-export default JobListReducer;
+export default JobReducer;
