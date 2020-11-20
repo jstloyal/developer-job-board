@@ -2,7 +2,7 @@
 const InitialState = {
   loading: false,
   data: [],
-  errorMsg: ''
+  errorMsg: '',
 }
 
 const JobListReducer = (state = InitialState, action) => {
@@ -20,7 +20,7 @@ const JobListReducer = (state = InitialState, action) => {
         ...state,
         loading: false,
         data: [],
-        errorMsg: 'Unable to get jobs',
+        errorMsg: 'Unable to get jobs, please refresh',
       };
 
       case 'JOB_LIST_SUCCESS':

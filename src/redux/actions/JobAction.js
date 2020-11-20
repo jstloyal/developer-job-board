@@ -46,7 +46,6 @@ export const GetJob = job => async dispatch => {
     const result = await axios.get(BASE_URL);
 
     dispatch({
-
       type: 'JOB_SUCCESS',
       payload: result.data,
       jobId: job,
