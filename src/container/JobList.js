@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { Container, Card, Badge, Button, Form, Col } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown'
+import JobSearchResult from '../components/JobSearchResult';
 
 const JobList = () => {
   const dispatch = useDispatch();
@@ -50,36 +51,7 @@ const JobList = () => {
 
     if (isSearchActive) {
       return (
-        <Card>
-          <h2>Showing {search.length} jobs</h2>
-          <div>
-            {search.map(searchItem => (
-              <Card.Body>
-                <div className="d-flex justify-content-between">
-                  <div>
-                    <Card.Title>
-                      {searchItem.title} - <span className="text-muted font-weight-light">{searchItem.company}</span>
-                    </Card.Title>
-                    <Card.Subtitle>
-                      {new Date(searchItem.create_at).toLocaleDateString}
-                    </Card.Subtitle>
-                    <Badge variant="secondary" className="mr-2">{searchItem.type}</Badge>
-                    <Badge variant="secondary">{searchItem.location}</Badge>
-                    <div style={{wordBreak: 'break-all'}}>
-                      <ReactMarkdown source={searchItem.how_to_apply} />
-                    </div>
-                  </div>
-                  <img src={searchItem.company_logo} alt={searchItem.company} className="d-sm-none d-md-block" height="50" />
-                </div>
-                <Card.Text>
-                  <Button variant="primary">
-                    <Link to={`/job/${searchItem.id}`}>Open Details</Link>
-                  </Button>
-                </Card.Text>
-              </Card.Body>
-              ))}
-          </div>
-        </Card>
+        <JobSearchResult search={search} />
       );
     }
 
