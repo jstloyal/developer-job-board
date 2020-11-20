@@ -1,3 +1,4 @@
+
 const InitialState = {
   loading: false,
   data: [],
@@ -6,7 +7,7 @@ const InitialState = {
 
 const JobListReducer = (state = InitialState, action) => {
   switch (action.type) {
-    case JOB_LIST_LOADING:
+    case 'JOB_LIST_LOADING':
       return {
         ...state,
         loading: true,
@@ -14,7 +15,7 @@ const JobListReducer = (state = InitialState, action) => {
         errorMsg: '',
       };
 
-    case JOB_LIST_FAIL:
+    case 'JOB_LIST_FAIL':
       return {
         ...state,
         loading: false,
@@ -22,7 +23,7 @@ const JobListReducer = (state = InitialState, action) => {
         errorMsg: 'Unable to get jobs',
       };
 
-    case JOB_LIST_SUCCESS:
+      case 'JOB_LIST_SUCCESS':
       return {
         ...state,
         loading: false,

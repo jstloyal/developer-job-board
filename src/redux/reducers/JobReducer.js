@@ -6,19 +6,19 @@ const InitialState = {
 
 const JobReducer = (state = InitialState, action) => {
   switch (action.type) {
-    case JOB_LOADING:
+    case 'JOB_LOADING':
       return {
         ...state,
         loading: true,
         errorMsg: '',
       };
-    case JOB_FAIL:
+    case 'JOB_FAIL':
       return {
         ...state,
         loading: false,
         errorMsg: 'Unable to find job',
       };
-    case JOB_SUCCESS:
+    case 'JOB_SUCCESS':
       return {
         ...state,
         loading: false,

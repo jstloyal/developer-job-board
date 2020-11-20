@@ -1,19 +1,15 @@
 import axios from 'axios';
 
-const JOB_LIST_LOADING = 'JOB_LIST_LOADING';
-const JOB_LIST_SUCCESS = 'JOB_LIST_SUCCESS';
-const JOB_LIST_FAIL = 'JOB_LIST_FAIL';
-
 export const JobListLoading = () => ({
-  type: JOB_LIST_LOADING,
+  type: 'JOB_LIST_LOADING',
 });
 
 export const JobListSuccess = jobs => ({
-  type: JOB_LIST_SUCCESS,
+  type: 'JOB_LIST_SUCCESS',
   payload: jobs,
 });
 export const JobListFailure = error => ({
-  type: JOB_LIST_FAIL,
+  type: 'JOB_LIST_FAIL',
   payload: error,
 });
 
@@ -31,15 +27,13 @@ export const GetJobList = () => async dispatch => {
   }
 };
 
-const JOB_LOADING = 'JOB_LOADING';
-const JOB_FAIL = 'JOB_FAIL';
 
 export const JobLoading = () => ({
-  type: JOB_LOADING,
+  type: 'JOB_LOADING',
 });
 
 export const JobFailure = error => ({
-  type: JOB_FAIL,
+  type: 'JOB_FAIL',
   payload: error,
 });
 
