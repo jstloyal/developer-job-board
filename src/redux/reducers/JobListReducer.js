@@ -23,7 +23,7 @@ const JobListReducer = (state = InitialState, action) => {
         errorMsg: 'Unable to get jobs, please refresh',
       };
 
-      case 'JOB_LIST_SUCCESS':
+    case 'JOB_LIST_SUCCESS':
       return {
         ...state,
         loading: false,
@@ -31,6 +31,7 @@ const JobListReducer = (state = InitialState, action) => {
         count: action.payload.length,
         errorMsg: '',
       };
+
     default:
       return state;
   }

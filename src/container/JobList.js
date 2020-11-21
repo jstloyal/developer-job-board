@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash';
+import Parser from 'html-react-parser';
 import { GetJobList } from '../redux/actions/JobAction';
 import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
@@ -70,13 +71,13 @@ const JobList = () => {
                       <Card.Title>
                         {job.title} - <span className="text-muted font-weight-light">{job.company}</span>
                       </Card.Title>
-                      <Card.Subtitle>
-                        {new Date(job.create_at).toLocaleDateString}
+                      <Card.Subtitle className="mb-2">
+                        Posted on: {new Date(job.created_at).toLocaleDateString()}
                       </Card.Subtitle>
                       <Badge variant="secondary" className="mr-2">{job.type}</Badge>
                       <Badge variant="secondary">{job.location}</Badge>
-                      <div style={{wordBreak: 'break-all'}}>
-                        <ReactMarkdown source={job.how_to_apply} />
+                      <div style={{wordBreak: 'break-all'}} className="mt-2">
+                        {Parser(job.how_to_apply)}
                       </div>
                     </div>
                     <img src={job.company_logo} alt={job.company} className="d-sm-none d-md-block" height="50" />

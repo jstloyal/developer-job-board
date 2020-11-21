@@ -9,12 +9,12 @@ function App() {
     <div className="App">
       <NavLink to="/">
         {' '}
-        <Nav />
+        <Nav className="mb-4" />
         {' '}
       </NavLink>
       <Switch>
         <Route path="/" exact component={JobList} />
-        {/* <Route path="/job/:job" exact component={Job} /> */}
+        <Route path="/job/:job" exact component={Job} />
         <Redirect to="/" />
       </Switch>
     </div>
