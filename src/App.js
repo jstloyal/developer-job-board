@@ -14,7 +14,7 @@ function App() {
       </NavLink>
       <Switch>
         <Route path="/" exact component={JobList} />
-        <Route path="/job/:job" exact component={Job} />
+        {/* <Route path="/job/:job" exact component={Job} /> */}
         <Redirect to="/" />
       </Switch>
     </div>

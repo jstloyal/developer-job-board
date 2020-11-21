@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Card, Badge, Button } from 'react-bootstrap';
+import ReactMarkdown from 'react-markdown';
 
 const JobSearchResult = ({ search }) => {
   if (!search) {
@@ -46,7 +48,7 @@ JobSearchResult.propTypes = {
   search: PropTypes.arrayOf(
     PropTypes.shape({
       0: PropTypes.objectOf(
-        Proptypes.shape({
+        PropTypes.shape({
           id: PropTypes.string,
           backdrop_path: PropTypes.string,
           name: PropTypes.string,

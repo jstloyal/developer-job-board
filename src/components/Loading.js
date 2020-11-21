@@ -2,5 +2,9 @@ import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 
 export default function Loading() {
-  <ProgressBar variant="success" now={67} />
+  return (
+    <ProgressBar>
+      <ProgressBar striped variant="success" now={60} />
+    </ProgressBar>
+  );
 }

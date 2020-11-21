@@ -2,27 +2,47 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Badge, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 const AllJobs = ({ jobList }) => {
+  if (!jobList) {
+    return null;
+  }
   return (
     <Card className="mb-3">
-      <Card.Body>
-        <div className="d-flex justify-content-between">
-          <div>
-            <Card.Title>
-              {jobList.title} - <span className="text-muted font-weight-light">{jobList.company}</span>
-            </Card.Title>
-            <Card.Subtitle className="text-muted mb-2">
-              {new Date(jobList.create_at).toLocaleDateString}
-            </Card.Subtitle>
-            <Badge variant="secondary" className="mr-2">{jobList.type}</Badge>
-            <Badge variant="secondary">{jobList.location}</Badge>
-          </div>
-        </div>
-      </Card.Body>
+      <h2>Showing {jobList.data.length} jobs</h2>
+      <div>
+        {jobList.data.map(job => (
+          <Card.Body>
+            <div className="d-flex justify-content-between">
+              <div>
+                <Card.Title>
+                  {job.title} - <span className="text-muted font-weight-light">{job.company}</span>
+                </Card.Title>
+                <Card.Subtitle className="text-muted mb-2">
+                  {new Date(job.create_at).toLocaleDateString}
+                </Card.Subtitle>
+                <Badge variant="secondary" className="mr-2">{job.type}</Badge>
+                <Badge variant="secondary">{job.location}</Badge>
+                <div style={{wordBreak: 'break-all'}}>
+                  <ReactMarkdown source={job.how_to_apply} />
+                </div>
+              </div>
+              <img src={job.company_logo} alt={job.company} className="d-sm-none d-md-block" height="50" />
+            </div>
+            <Card.Text>
+              <Button variant="primary">
+                <Link to={`/job/${job.id}`}>Open Details</Link>
+              </Button>
+            </Card.Text>
+          </Card.Body>
+        ))}
+      </div>
     </Card>
   );
 };
+
+export default AllJobs;
 
 AllJobs.propTypes = {
   jobList: PropTypes.shape({
@@ -33,5 +53,3 @@ AllJobs.propTypes = {
 AllJobs.defaultProps = {
   jobList: [],
 };
-
-export default AllJobs;

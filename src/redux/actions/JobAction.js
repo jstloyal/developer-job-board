@@ -17,7 +17,7 @@ export const GetJobList = () => async dispatch => {
   try {
     dispatch(JobListLoading());
 
-    const BASE_URL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?';
+    const BASE_URL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
 
     const result = await axios.get(BASE_URL);
     const jobs = result.data;

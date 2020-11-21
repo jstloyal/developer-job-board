@@ -57,38 +57,40 @@ const JobList = () => {
 
     if (!_.isEmpty(jobList.data)) {
       return (
-        <Card className="mb-3">
+        <div>
           <h2>
             Showing {jobList.data.length} jobs per page.
           </h2>
           <div>
             {jobList.data.map(job => (
-              <Card.Body>
-                <div className="d-flex justify-content-between">
-                  <div>
-                    <Card.Title>
-                      {job.title} - <span className="text-muted font-weight-light">{job.company}</span>
-                    </Card.Title>
-                    <Card.Subtitle>
-                      {new Date(job.create_at).toLocaleDateString}
-                    </Card.Subtitle>
-                    <Badge variant="secondary" className="mr-2">{job.type}</Badge>
-                    <Badge variant="secondary">{job.location}</Badge>
-                    <div style={{wordBreak: 'break-all'}}>
-                      <ReactMarkdown source={job.how_to_apply} />
+              <Card className="mb-3">
+                <Card.Body>
+                  <div className="d-flex justify-content-between">
+                    <div>
+                      <Card.Title>
+                        {job.title} - <span className="text-muted font-weight-light">{job.company}</span>
+                      </Card.Title>
+                      <Card.Subtitle>
+                        {new Date(job.create_at).toLocaleDateString}
+                      </Card.Subtitle>
+                      <Badge variant="secondary" className="mr-2">{job.type}</Badge>
+                      <Badge variant="secondary">{job.location}</Badge>
+                      <div style={{wordBreak: 'break-all'}}>
+                        <ReactMarkdown source={job.how_to_apply} />
+                      </div>
                     </div>
+                    <img src={job.company_logo} alt={job.company} className="d-sm-none d-md-block" height="50" />
                   </div>
-                  <img src={job.company_logo} alt={job.company} className="d-sm-none d-md-block" height="50" />
-                </div>
-                <Card.Text>
-                  <Button variant="primary">
-                    <Link to={`/job/${job.id}`}>Open Details</Link>
-                  </Button>
-                </Card.Text>
-              </Card.Body>
+                  <Card.Text>
+                    <Button variant="primary">
+                      <Link to={`/job/${job.id}`} className="text-white">Open Details</Link>
+                    </Button>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             ))}
           </div>
-        </Card>
+        </div>
       );
     }
 
@@ -104,10 +106,21 @@ const JobList = () => {
   };
   return (
     <div>
-      <input type="text" placeholder="description" onChange={handleSearch} />
-      <input type="text" placeholder="location" onChange={handleSearch} />
       <Container>
+        <Form className="mb-4">
+          <Form.Row className="align-items-end">
+            <Form.Group as={Col}>
+              <Form.Label>Description</Form.Label>
+              <Form.Control onChange={handleSearch} name="description" type="text" />
+            </Form.Group>
+            <Form.Group as={Col}>
+              <Form.Label>Location</Form.Label>
+              <Form.Control onChange={handleSearch} name="location" type="text" />
+            </Form.Group>
+          </Form.Row>
+        </Form>
         {ShowData()}
+        Good morning
       </Container>
     </div>
   );
