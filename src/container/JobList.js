@@ -120,7 +120,6 @@ const JobList = () => {
           </Form.Row>
         </Form>
         {ShowData()}
-        Good morning
       </Container>
     </div>
   );
