@@ -108,7 +108,7 @@ const JobList = () => {
   return (
     <div>
       <Container>
-        <Form className="mb-4">
+        <Form className="mb-4 mt-3">
           <Form.Row className="align-items-end">
             <Form.Group as={Col}>
               <Form.Label>Description</Form.Label>

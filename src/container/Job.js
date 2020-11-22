@@ -21,7 +21,7 @@ const Job = ({ match }) => {
   const ShowData = () => {
     if (!_.isEmpty(jobState.data[jobId])) {
       const jobData = jobState.data[jobId];
-      return <JobResults />;
+      return <JobResults jobData={jobData} />;
     }
 
     if (jobState.loading) {
