@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, Badge, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
+import Parser from 'html-react-parser';
 
 const AllJobs = ({ jobList }) => {
   if (!jobList) {
@@ -26,7 +27,7 @@ const AllJobs = ({ jobList }) => {
                   <Badge variant="secondary" className="mr-2">{job.type}</Badge>
                   <Badge variant="secondary">{job.location}</Badge>
                   <div style={{wordBreak: 'break-all'}}>
-                    <ReactMarkdown source={job.how_to_apply} allowDangerousHtml={false} />
+                    {Parser(job.how_to_apply)}
                   </div>
                 </div>
                 <img src={job.company_logo} alt={job.company} className="d-sm-none d-md-block" height="50" />

@@ -7,7 +7,7 @@ const JobResults = ({ jobData }) => (
   <div className="justify-content-center">
     <Button className="float-left" variant="primary">Back</Button>
     <Card style={{width: '60rem'}} className="d-flex align-items-center mb-4 mt-5">
-      <a href={jobData.company_url}> 
+      <a href={jobData.company_url}>
         <Card.Img 
           variant="top" 
           src={jobData.company_logo} 

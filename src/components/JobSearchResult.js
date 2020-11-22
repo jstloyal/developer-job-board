@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Badge, Button } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
+import Parser from 'html-react-parser';
 
 const JobSearchResult = ({ search }) => {
   if (!search) {
@@ -26,7 +27,7 @@ const JobSearchResult = ({ search }) => {
                   <Badge variant="secondary" className="mr-2">{searchItem.type}</Badge>
                   <Badge variant="secondary">{searchItem.location}</Badge>
                   <div style={{wordBreak: 'break-all'}}>
-                    <ReactMarkdown source={searchItem.how_to_apply} />
+                    {Parser(searchItem.how_to_apply)}
                   </div>
                 </div>
                 <img src={searchItem.company_logo} alt={searchItem.company} className="d-sm-none d-md-block" height="50" />
