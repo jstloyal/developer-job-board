@@ -4,8 +4,8 @@ import Parser from 'html-react-parser';
 import { Card, Button } from 'react-bootstrap';
 
 const JobResults = ({ jobData }) => (
-  <div className="justify-content-center">
-    <Card style={{width: '60rem'}} className="d-flex align-items-center mb-4 mt-5">
+  <div>
+    <Card style={{width: '100%'}} className="d-flex align-items-center p-5 mb-4 mt-5">
       <a href={jobData.company_url}>
         <Card.Img 
           variant="top" 
