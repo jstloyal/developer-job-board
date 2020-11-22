@@ -37,19 +37,19 @@ const JobResults = ({ jobData }) => (
 
 export default JobResults;
 
-// JobResults.propTypes = {
-//   jobData: PropTypes.shape({
-//     company_url: PropTypes.string.isRequired,
-//     company_logo: PropTypes.string.isRequired,
-//     company: PropTypes.string.isRequired,
-//     type: PropTypes.string.isRequired,
-//     title: PropTypes.string.isRequired,
-//     location: PropTypes.string.isRequired,
-//     created_at: PropTypes.string.isRequired,
-//     description: PropTypes.string.isRequired,
-//     how_to_apply: PropTypes.string.isRequired,
-//   }),
-// };
-// JobResults.defaultProps = {
-//   jobData: [],
-// };
+JobResults.propTypes = {
+  jobData: PropTypes.shape({
+    company_url: PropTypes.string.isRequired,
+    company_logo: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    created_at: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    how_to_apply: PropTypes.string.isRequired,
+  }),
+};
+JobResults.defaultProps = {
+  jobData: [],
+};
