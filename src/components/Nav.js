@@ -8,5 +8,5 @@ export default function Nav() {
         <h1>DEVELOPER JOB BOARD</h1>
       </Navbar.Brand>
     </Navbar>
-  )
+  );
 }

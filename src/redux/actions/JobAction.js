@@ -27,7 +27,6 @@ export const GetJobList = () => async dispatch => {
   }
 };
 
-
 export const JobLoading = () => ({
   type: 'JOB_LOADING',
 });

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Badge, Button } from 'react-bootstrap';
-import ReactMarkdown from 'react-markdown';
 import Parser from 'html-react-parser';
 
 const JobSearchResult = ({ search }) => {
@@ -11,22 +10,30 @@ const JobSearchResult = ({ search }) => {
   }
   return (
     <div>
-      <h2>Showing {search.length} jobs</h2>
+      <h2>
+        Showing
+        {search.length}
+        {' '}
+        jobs
+      </h2>
       <div>
         {search.map(searchItem => (
-          <Card className="mb-3">
+          <Card key={searchItem.id} className="mb-3">
             <Card.Body>
               <div className="d-flex justify-content-between">
                 <div>
                   <Card.Title>
-                    {searchItem.title} - <span className="text-muted font-weight-light">{searchItem.company}</span>
+                    {searchItem.title}
+                    {' '}
+                    -
+                    <span className="text-muted font-weight-light">{searchItem.company}</span>
                   </Card.Title>
                   <Card.Subtitle>
                     {new Date(searchItem.create_at).toLocaleDateString}
                   </Card.Subtitle>
                   <Badge variant="secondary" className="mr-2">{searchItem.type}</Badge>
                   <Badge variant="secondary">{searchItem.location}</Badge>
-                  <div style={{wordBreak: 'break-all'}}>
+                  <div style={{ wordBreak: 'break-all' }}>
                     {Parser(searchItem.how_to_apply)}
                   </div>
                 </div>
@@ -63,4 +70,4 @@ JobSearchResult.propTypes = {
 
 JobSearchResult.defaultProps = {
   search: [],
-}
+};

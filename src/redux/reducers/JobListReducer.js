@@ -1,9 +1,8 @@
-
 const InitialState = {
   loading: false,
   data: [],
   errorMsg: '',
-}
+};
 
 const JobListReducer = (state = InitialState, action) => {
   switch (action.type) {

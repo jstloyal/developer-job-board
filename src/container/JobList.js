@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash';
 import Parser from 'html-react-parser';
-import { GetJobList } from '../redux/actions/JobAction';
 import { Link } from 'react-router-dom';
+import {
+  Container, Card, Badge, Button, Form, Col,
+} from 'react-bootstrap';
 import Loading from '../components/Loading';
-import { Container, Card, Badge, Button, Form, Col } from 'react-bootstrap';
-import ReactMarkdown from 'react-markdown'
+import { GetJobList } from '../redux/actions/JobAction';
 import JobSearchResult from '../components/JobSearchResult';
 
 const JobList = () => {
@@ -33,11 +34,9 @@ const JobList = () => {
   const FetchData = page => {
     dispatch(GetJobList(page));
   };
-  console.log('job', jobList.data)
 
-  console.log('search', search);
   React.useEffect(() => {
-    FetchData(1)
+    FetchData(1);
   }, []);
 
   const ShowData = () => {
@@ -60,23 +59,32 @@ const JobList = () => {
       return (
         <div>
           <h2>
-            Showing {jobList.data.length} jobs per page.
+            Showing
+            {' '}
+            {jobList.data.length}
+            {' '}
+            jobs per page.
           </h2>
           <div>
             {jobList.data.map(job => (
-              <Card className="mb-3">
+              <Card key={job.id} className="mb-3">
                 <Card.Body>
                   <div className="d-flex justify-content-between">
                     <div>
                       <Card.Title>
-                        {job.title} - <span className="text-muted font-weight-light">{job.company}</span>
+                        {job.title}
+                        {' '}
+                        -
+                        <span className="text-muted font-weight-light">{job.company}</span>
                       </Card.Title>
                       <Card.Subtitle className="mb-2">
-                        Posted on: {new Date(job.created_at).toLocaleDateString()}
+                        Posted on:
+                        {' '}
+                        {new Date(job.created_at).toLocaleDateString()}
                       </Card.Subtitle>
                       <Badge variant="secondary" className="mr-2">{job.type}</Badge>
                       <Badge variant="secondary">{job.location}</Badge>
-                      <div style={{wordBreak: 'break-all'}} className="mt-2">
+                      <div style={{ wordBreak: 'break-all' }} className="mt-2">
                         {Parser(job.how_to_apply)}
                       </div>
                     </div>

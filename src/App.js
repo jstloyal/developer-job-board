@@ -1,5 +1,7 @@
 import React from 'react';
-import {Switch, Route, NavLink, Redirect } from 'react-router-dom';
+import {
+  Switch, Route, NavLink, Redirect,
+} from 'react-router-dom';
 import Nav from './components/Nav';
 import JobList from './container/JobList';
 import Job from './container/Job';
