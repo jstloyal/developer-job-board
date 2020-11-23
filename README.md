@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+## Developer Job Board
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!--
+*** Thanks for checking out this README Template. If you have a suggestion that would
+*** make this better, please fork the repo and create a pull request or simply open
+*** an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-## Available Scripts
+<!-- PROJECT SHIELDS -->
 
-In the project directory, you can run:
+<p align="center">
+  <a href="https://github.com/ignatius22/redux-bookstore">
+    <img src="https://storage.googleapis.com/blog-images-backup/1*3SVfBkNZI2f-sspiq59xcw.png" alt="React Logo" width="120" height="120">
+  </a>
 
-### `yarn start`
+  <p align="center">
+    This project is part of the Microverse curriculum in React-Redux module!
+  </p>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- TABLE OF CONTENTS -->
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Table of Contents
 
-### `yarn test`
+- [About the Project](#about-the-project)
+- [Contributors](#Installation)
+- [Contributors](#contributors)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About The Project
 
-### `yarn build`
+This project is a React-Redux capstone project based on the catalog of statistics. Build a developer job searching website, which has a real world application for many developers like myself. This catalog of the job gets its data from the [GitHub Jobs API](https://jobs.github.com/api), and data are retrieved through the redux store. I include a filter to search for jobs by location or description. The webpage consists of two pages using a unique route within a single web application. The first-page shows several lists of jobs, and the second-page shows information about a specific job.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+    <img src="src/assets/developer-job1.gif" alt="project-image" >
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Live Link  (Heroku)
+[Project live link](https://developer-job-board.herokuapp.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `yarn eject`
+To run 'developer-job-board app' locally, clone the repository, navigate to the cloned directory.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Follow these commands step by step:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+github.com:ignatius22/redux-bookstore.git
+cd redux-bookstore.git
+npm install
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Built With
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This project was built using these technologies.
 
-## Learn More
+- React
+- Redux
+- prop-types
+- Redux-thunk
+- Axios
+- ESlint
+- Stylelint
+- VS Code editor
+- NPM
+- GitHub
+- Heroku
+- Bootstrap
+- GitHub Jobs API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Author**
 
-### Code Splitting
+​**Adetayo Sunkanmi**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Github: [jstloyal](https://github.com/jstloyal)
+- Twitter: [@jstloyalty](https://twitter.com/jstloyalty)
+- Linkedin: [Adetayo Sunkanmi](https://www.linkedin.com/in/jstloyalty)
+- E-mail: jstloyalty@gmail.com
 
-### Analyzing the Bundle Size
+<!-- ACKNOWLEDGEMENTS -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Acknowledgements
 
-### Making a Progressive Web App
+- [Microverse](https://www.microverse.org/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📝
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
