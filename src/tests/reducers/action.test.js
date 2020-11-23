@@ -1,4 +1,4 @@
-import * as reducerAction from '../redux/actions/JobAction';
+import * as reducerAction from '../../redux/actions/JobAction';
 
 describe('Get Job List', () => {
   const parameter = 'jobs';
