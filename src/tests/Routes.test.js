@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Route, Switch } from 'react-router';
-import Routes from '../../App';
-import Nav from '../../components/Nav';
+import Routes from '../App';
+import Nav from '../components/Nav';
 
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
