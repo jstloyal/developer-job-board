@@ -47,7 +47,7 @@ To run 'developer-job-board app' locally, clone the repository, navigate to the 
 #### Follow these commands step by step:
 
 ```
-github.com:ignatius22/redux-bookstore.git
+github.com:jstloyal/developer-job-board.git
 cd redux-bookstore.git
 npm install
 npm start
